@@ -1,0 +1,30 @@
+model:
+  rows: 2
+  cols: 4
+  boundary: open
+  energy_convention: disagreement_count
+  disagreement_cost: 1.0
+  conventional_ising_equivalent_J: 0.5
+  external_field_h: 0.0
+  spin_values: [-1, 1]
+  state_ordering: row_major_lexicographic_bits_0_then_1
+
+schedule:
+  beta: [0.0, 0.3, 0.6, 0.9, 1.2]
+
+dynamics:
+  type: random_scan_single_site_heat_bath
+  resampling: exact_conditional_gibbs
+  laziness: 0.5
+
+filter:
+  family: claudon_average_power
+  phase: pi
+  completion: canonical_spectral
+
+numerics:
+  dtype: complex128
+  atol: 1.0e-10
+  rtol: 1.0e-10
+  benchmark_epsilon: 1.0e-3
+  sweep_epsilon: [1.0e-1, 5.0e-2, 2.0e-2, 1.0e-2, 5.0e-3, 1.0e-3]

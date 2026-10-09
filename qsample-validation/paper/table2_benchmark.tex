@@ -1,0 +1,31 @@
+\begin{table*}[!t]
+\caption{Fully enumerated open $2\times4$ disagreement-count Ising benchmark. Panel (a) gives the stage inputs. Panel (b) fixes $\varepsilon=10^{-3}$, $\varepsilon_i^{\rm FP}=1.25\times10^{-4}$, and $A_i=2.28249$, and reports full-state propagation under the approximate compiled phases $\widetilde{\mathcal S}$. The ideal projectors are used only for sequence design and an audit control. $N_{\rm cW}$ counts controlled walk calls, $N_{\rm wrap}$ counts outer $O_{\mathcal P_j}^{(\dagger)}$ calls, and $Q_i=2N_{\rm cW}+N_{\rm wrap}$. $\widetilde D_i^{\rm local}$ starts stage $i$ from a fresh $\mathcal J\lvert\pi_i\rangle$; $\widetilde D_i^{\rm cum}$ compares the sequential prefix through stage $i$ with $\mathcal J\lvert\pi_{i+1}\rangle$.}
+\label{tab:exact-benchmark}
+\centering
+\footnotesize
+\textbf{(a) Stage inputs.}\quad
+\setlength{\tabcolsep}{4.3pt}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$i$ & $\beta_i\!\to\!\beta_{i+1}$ & $p_i=q_i$ & $(\delta_i,\delta_{i+1})$ & $(\Delta_i,\Delta_{i+1})$ & $L_i$\\
+\midrule
+0 & $0.0\!\to\!0.3$ & $0.944415$ & $(0.062500,0.039040)$ & $(0.355421,0.280346)$ & $5$\\
+1 & $0.3\!\to\!0.6$ & $0.939133$ & $(0.039040,0.021008)$ & $(0.280346,0.205340)$ & $5$\\
+2 & $0.6\!\to\!0.9$ & $0.933454$ & $(0.021008,0.009999)$ & $(0.205340,0.141532)$ & $5$\\
+3 & $0.9\!\to\!1.2$ & $0.936311$ & $(0.009999,0.004360)$ & $(0.141532,0.093413)$ & $5$\\
+\bottomrule
+\end{tabular}
+\\[2pt]
+\textbf{(b) Compiled transport.}\quad
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabular}{@{}ccccccccc@{}}
+\toprule
+$i$ & $(d_{i,i},d_{i,i+1})$ & $\eta_i$ & $\widetilde D_i^{\rm local}$ & $\widetilde D_i^{\rm cum}$ & $N_{\rm cW}$ & $N_{\rm wrap}$ & $Q_i$ & leakage\\
+\midrule
+0 & $(165,209)$ & $2.74\!\times\!10^{-5}$ & $1.22\!\times\!10^{-4}$ & $1.22\!\times\!10^{-4}$ & $1496$ & $8$ & $3000$ & $<2.3\!\times\!10^{-15}$\\
+1 & $(209,286)$ & $2.74\!\times\!10^{-5}$ & $1.04\!\times\!10^{-4}$ & $8.18\!\times\!10^{-5}$ & $1980$ & $8$ & $3968$ & $<2.3\!\times\!10^{-15}$\\
+2 & $(286,418)$ & $2.74\!\times\!10^{-5}$ & $6.37\!\times\!10^{-5}$ & $6.41\!\times\!10^{-5}$ & $2816$ & $8$ & $5640$ & $<2.3\!\times\!10^{-15}$\\
+3 & $(418,638)$ & $2.74\!\times\!10^{-5}$ & $8.66\!\times\!10^{-5}$ & $1.08\!\times\!10^{-4}$ & $4224$ & $8$ & $8456$ & $<2.3\!\times\!10^{-15}$\\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,6 @@
+IEEEtran.cls linguist-vendored=true
+quantikz.sty linguist-vendored=true
+tikzlibraryquantikz.code.tex linguist-vendored=true
+SAMPLE_Final.tex linguist-documentation=true
+qsample-validation/outputs/** linguist-generated=true
+qsample-validation/paper/*.pdf linguist-generated=true

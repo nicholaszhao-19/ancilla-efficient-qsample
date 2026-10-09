@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this research."
+type: software
+title: "Ancilla-Efficient QSample Preparation: Numerical Experiments"
+authors:
+  - family-names: Zhao
+    given-names: Nicholas
+version: 0.1.0
+date-released: 2026-10-09
+url: https://github.com/nicholaszhao-19/ancilla-efficient-qsample
+preferred-citation:
+  type: article
+  title: "Ancilla-Efficient QSAMPLE Preparation for Reversible Markov Chains"
+  authors:
+    - family-names: Zhao
+      given-names: Nicholas
+  year: 2026
+  doi: 10.48550/arXiv.2605.23442

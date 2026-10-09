@@ -1,0 +1,9 @@
+# Exact Python package provenance for the audited macOS arm64 environment.
+# Python, BLAS, TeX, and platform details are recorded in REPRODUCIBILITY.md.
+matplotlib==3.10.3
+numpy==1.26.4
+PyYAML==6.0.3
+pytest==8.3.5
+ruff==0.15.14
+setuptools==80.9.0
+wheel==0.45.1

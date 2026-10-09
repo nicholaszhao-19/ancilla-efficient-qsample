@@ -1,0 +1,73 @@
+\documentclass[border=3pt]{standalone}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage{amsmath,amssymb}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{quantikz}
+\definecolor{oracleblue}{RGB}{214,232,247}
+\definecolor{filterviolet}{RGB}{232,222,244}
+\definecolor{compilerrose}{RGB}{244,214,220}
+\definecolor{compilerroseline}{RGB}{170,45,70}
+\definecolor{phaseamber}{RGB}{255,235,190}
+\definecolor{walkgreen}{RGB}{220,241,226}
+\begin{document}
+\begin{minipage}{17.6cm}
+\centering
+\resizebox{0.84\linewidth}{!}{%
+\begin{quantikz}[column sep=4.5mm,row sep=5.5mm]
+\lstick{$\llap{\text{\textbf{(a)}}\hspace{5mm}}\ket{0}$} &
+  \qw &
+  \qw &
+  \qw &
+  \gate[wires=3,style={fill=compilerrose,draw=compilerroseline,
+        minimum width=19mm}]{C_{\gamma_i,\eta}(\mathcal W_i)} &
+  \gate[style={fill=phaseamber,draw=orange!70!black}]{P_\phi} &
+  \gate[wires=3,style={fill=compilerrose,draw=compilerroseline,
+        minimum width=19mm}]{C_{\gamma_i,\eta}(\mathcal W_i)^\dagger} &
+  \qw &
+  \qw &
+  \qw \\
+\lstick{$\ket{v}_A$} &
+  \qwbundle{} &
+  \gate[wires=2,style={fill=oracleblue,draw=blue!65!black,
+        minimum width=15mm}]{O_{\mathcal P_i}} &
+  \qw &
+  \qw & \qw & \qw &
+  \qw &
+  \gate[wires=2,style={fill=oracleblue,draw=blue!65!black,
+        minimum width=15mm}]{O_{\mathcal P_i}^\dagger} &
+  \qwbundle{} \\
+\lstick{$\ket{0}_B$} &
+  \qwbundle{} &
+  \qw & \qw & \qw & \qw & \qw & \qw & \qw &
+  \qwbundle{}
+\end{quantikz}}
+\par\vspace{7mm}
+\resizebox{0.84\linewidth}{!}{%
+\begin{quantikz}[column sep=4mm,row sep=5.5mm]
+\lstick{$\llap{\text{\textbf{(b)}}\hspace{5mm}}\ket0$} &
+ \gate[style={fill=filterviolet,draw=violet!70!black}]{R_0} &
+ \octrl{1} &
+ \gate[style={fill=filterviolet,draw=violet!70!black}]{R_1} &
+ \octrl{1} &
+ \push{\ \cdots\ }\qw &
+ \gate[style={fill=filterviolet,draw=violet!70!black}]{R_{d-1}} &
+ \octrl{1} &
+ \gate[style={fill=filterviolet,draw=violet!70!black}]{R_d} &
+ \qw \\
+\lstick{$\mathcal T_i\ket{v}_A$} &
+ \qwbundle{} \qw &
+ \gate[style={fill=walkgreen,draw=green!55!black}]{\mathcal W_i} &
+ \qw &
+ \gate[style={fill=walkgreen,draw=green!55!black}]{\mathcal W_i} &
+ \push{\ \cdots\ }\qw &
+ \qw &
+ \gate[style={fill=walkgreen,draw=green!55!black}]{\mathcal W_i} &
+ \qw &
+ \qw
+\end{quantikz}}
+\end{minipage}
+\end{document}
