@@ -4,7 +4,7 @@
 
 Reproducible numerical experiments for **Ancilla-Efficient QSAMPLE Preparation for Reversible Markov Chains**, by Nicholas Zhao. Accepted at **IEEE QCE 2026, QALG track**.
 
-[Read the paper on arXiv](https://arxiv.org/abs/2605.23442) · [Local manuscript PDF](SAMPLE_Final.pdf) · [Mathematical specification](qsample-validation/SPEC.md) · [Validation report](qsample-validation/REPORT.md)
+[Read the paper on arXiv](https://arxiv.org/abs/2605.23442) · [Mathematical specification](qsample-validation/SPEC.md) · [Validation report](qsample-validation/REPORT.md)
 
 ## Experiment at a glance
 
@@ -57,19 +57,13 @@ python scripts/run_benchmark.py
 python scripts/run_compiler_sweep.py
 python scripts/run_end_to_end_sweep.py
 python scripts/make_paper_outputs.py
-python scripts/run_publication_audit.py
 ```
 
-### Rebuild the complete manuscript and figures
+### Paper and publication build
 
-With TeX Live (`latexmk`, `pdflatex`) and Poppler (`pdfinfo`) installed:
+Read the paper on [arXiv](https://arxiv.org/abs/2605.23442). The manuscript PDF and LaTeX source are not distributed in this repository.
 
-```bash
-cd qsample-validation
-python scripts/build_publication.py
-```
-
-The build runs tests, lint, package checks, numerical sweeps, figure generation, the nine-page local proceedings manuscript, and an independent numerical audit. Numerical checks use tolerances; byte-identical output across BLAS implementations and TeX versions is not promised.
+The publication build (`scripts/build_publication.py`) and full publication audit (`scripts/run_publication_audit.py`) require local copies of `SAMPLE_Final.tex` and `SAMPLE_Final.pdf` in the repository root. The saved audit records the earlier complete publication build; it includes hashes of those manuscript files. The numerical reproduction commands above do not require them.
 
 ## Repository guide
 
@@ -79,7 +73,6 @@ The build runs tests, lint, package checks, numerical sweeps, figure generation,
 - `qsample-validation/scripts/`: reproduction and independent audit entry points.
 - `qsample-validation/outputs/`: inspectable CSV data, plots and audit record.
 - `qsample-validation/paper/`: figure sources and generated table.
-- `SAMPLE_Final.tex`, `SAMPLE_Final.pdf`: local manuscript source and PDF. The arXiv link above is the public version of record; the local file is identified separately.
 
 ## Citation
 

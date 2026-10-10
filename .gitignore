@@ -13,3 +13,7 @@ dist/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Keep local manuscript copies off GitHub.
+/SAMPLE_Final.pdf
+/SAMPLE_Final.tex
