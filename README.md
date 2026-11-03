@@ -16,22 +16,24 @@ The energy is the number of disagreeing neighbouring spins. This corresponds to 
 
 ## Recorded results
 
-For requested final error **ε = 10⁻³**, the saved phase-weighted benchmark records:
+For requested final error **ε = 10⁻³**, using the **uniform filter allocation** of the published paper (`corrected_end_to_end_sweep.csv`):
 
 | Quantity | Value |
 |---|---:|
 | Joint pure-state trace distance | 1.08168 × 10⁻⁴ |
 | Reduced-system trace distance | 1.08168 × 10⁻⁴ |
 | Measurement total variation distance | 1.88880 × 10⁻⁵ |
-| Clean-subspace leakage | 1.17669 × 10⁻¹⁶ |
-| Controlled-walk calls | 10,516 |
-| Total transition-oracle calls | 21,064 |
+| Clean-subspace leakage | 6.22230 × 10⁻¹⁸ |
+| Controlled-walk calls | 11,472 |
+| Total transition-oracle calls | 22,976 |
+
+The repository also records an alternative **phase-weighted** allocation (`end_to_end_sweep.csv`): same accuracy, 10,516 controlled-walk calls and 21,064 transition-oracle calls. It is kept as a tested variant; the published paper reports the uniform allocation above, and the saved independent audit (`publication_audit.json`) was recorded for the phase-weighted run.
 
 These are numerical reference results, not wall-clock speedups or hardware measurements. Ideal-projector values are separately labelled diagnostic controls.
 
-![Compiler error and end-to-end validation](qsample-validation/outputs/figures/fig3_validation.png)
+![Compiler error and end-to-end validation](qsample-validation/outputs/figures/fig3_validation_corrected.png)
 
-Inspect the [CSV results](qsample-validation/outputs/data/) and [independent audit](qsample-validation/outputs/data/publication_audit.json). Files prefixed `corrected_` report the alternative uniform filter allocation; see the implementation and specification for the distinction. The table above refers to `end_to_end_sweep.csv`, not a mixture of the two allocations.
+Inspect the [CSV results](qsample-validation/outputs/data/) and [independent audit](qsample-validation/outputs/data/publication_audit.json). Files prefixed `corrected_` report the uniform filter allocation used in the paper; unprefixed files report the phase-weighted variant. The table above uses the `corrected_` files only, not a mixture of the two allocations.
 
 ## Quick start
 
